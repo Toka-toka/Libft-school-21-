@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:17:42 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/06 16:16:54 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/06 16:12:32 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int main (void)
 	tests[18] = "-9223372036854775808";		// min long
 	tests[19] = "9223372036854775807";		// max long
 	tests[20] = "99223372036854775807";		// over 10^20
-	tests[21] = "-2147483648";				// min int
-	tests[22] = "2147483647";				// max int
-	tests[23] = "-2147483649";				// over min int
-	tests[24] = "2147483648";				// over max int
-//	tests[25] = "\0";
-	while (i != 25)
+	tests[21] = "9223372036854775808";		// min int
+	tests[22] = "9223372036854775808";		// max int
+	tests[23] = "9223372036854775808";		// over min int
+	tests[24] = "9223372036854775808";		// over max int
+	tests[25] = "\0";
+	while (i < 25)
 	{		
 		if (ft_atoi(tests[i]) == atoi(tests[i]))
 			printf("test[%d] = OK\n", i+1);

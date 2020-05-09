@@ -1,1 +1,4 @@
 /other_files
+*.out
+*.gch
+*.swp

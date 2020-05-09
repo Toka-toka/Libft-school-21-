@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 22:22:02 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/10 01:46:15 by sedric           ###   ########.fr       */
+/*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
+/*   Updated: 2020/05/10 01:59:38 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "libft.h"
 
-# define LIBFT_H
+char		*ft_strchr(const char *s, int c)
+{
+	char	*str;
+	char	symbol;
+	size_t	i;
 
-# include <stdio.h>
-
-size_t	ft_strlcat(char *dest, const char *src, size_t n);
-size_t	ft_strlen(const char *s);
-char    *ft_strchr(const char *s, int c);
-
-#endif
+	i = 0;
+	symbol = (char)c;
+	str = (char*)s;
+	while (str[i - 1] != '\0')
+	{
+		if (str[i] == symbol)
+			return (str + i);
+		i++;
+	}
+	return (NULL);
+}

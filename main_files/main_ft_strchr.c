@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   main_ft_strchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 22:22:02 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/10 01:46:15 by sedric           ###   ########.fr       */
+/*   Created: 2020/05/06 17:15:05 by sedric            #+#    #+#             */
+/*   Updated: 2020/05/10 01:55:48 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-
-# define LIBFT_H
-
 # include <stdio.h>
+# include <unistd.h>
+# include <string.h>
+# include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t n);
-size_t	ft_strlen(const char *s);
-char    *ft_strchr(const char *s, int c);
-
-#endif
+int main (void)
+{
+	int symbol = '\0';
+	char s[] = "123456789";
+	char *position;
+	position = ft_strchr(s, symbol);
+	if (position != NULL)
+		printf("Символ = %ld", position - s);
+	else 
+		printf("Не найден");
+	return (0); 
+}

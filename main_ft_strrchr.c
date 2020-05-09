@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strchr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strrchr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:15:05 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/10 01:55:48 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/10 02:40:15 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 int main (void)
 {
-	int symbol = '\0';
-	char s[] = "123456789";
+	int symbol = '1';
+	char s[] = "11123";
 	char *position;
-	position = ft_strchr(s, symbol);
+	position = ft_strrchr(s, symbol);
 	if (position != NULL)
 		printf("Символ = %ld", position - s);
 	else 

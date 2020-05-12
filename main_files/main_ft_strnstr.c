@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   main_ft_strnstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 22:22:02 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/12 19:09:45 by sedric           ###   ########.fr       */
+/*   Created: 2020/05/06 17:15:05 by sedric            #+#    #+#             */
+/*   Updated: 2020/05/12 18:58:22 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-
-# define LIBFT_H
-
 # include <stdio.h>
+# include <unistd.h>
+# include <bsd/string.h>
+# include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*ft_memchr(const void *arr, int symbol, size_t n);
-size_t	ft_strlcat(char *dest, const char *src, size_t n);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strnstr(const char *big, const char *little, size_t len);
-
-#endif
+int main (void)
+{
+	char s[] = "112x";
+	char s1[] = "2"; 
+	size_t len = 3;
+	char *position;
+	position = ft_strnstr(s, s1, len);
+	if (position != NULL)
+		printf("Символ = %s", position);
+	else 
+		printf("Не найден");
+	return (0); 
+}

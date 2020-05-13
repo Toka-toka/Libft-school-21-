@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 14:00:50 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/13 15:22:04 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/13 18:08:18 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,20 @@
 
 int	main (void)
 {
-	int i = 0;
-	int symbols[8] = {64, 65, 90, 91, 96, 97, 122, 123};
-	while (i != 8)
+	int i = -1;
+	int fail = 0;
+	while (i != 260)
 	{
-		printf("isdigit = %d\n", ft_isalpha(symbols[i]));
+		if (isalpha(i) != ft_isalpha(i))
+		{
+			printf("Fail at number i = %c\n", i);
+			printf("isalpha = %d\n", isalpha(i));
+			fail++;
+		}
 		i++;
 	}
+	if (fail == 0)
+		printf("Function ft_isalpha works well!");
+//	printf("I \nlove\n Nataly");
+	return (0);
 }

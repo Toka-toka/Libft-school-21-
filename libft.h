@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 22:22:02 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/13 15:40:44 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/13 17:33:47 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_isprint(int c);
+int		ft_isalpha(int c);
 
 #endif

@@ -1,4 +1,6 @@
 /other_files
+/Libftest
+/libft-unit-test
 *.out
 *.gch
 *.swp

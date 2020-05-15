@@ -6,7 +6,7 @@
 #    By: sedric <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 17:29:46 by sedric            #+#    #+#              #
-#    Updated: 2020/05/14 18:42:13 by sedric           ###   ########.fr        #
+#    Updated: 2020/05/15 20:24:14 by sedric           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME:.a=.so)
 
 so:
 	gcc -fPIC -c $(SRC)

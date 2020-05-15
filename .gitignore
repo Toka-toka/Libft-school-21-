@@ -5,3 +5,6 @@
 *.gch
 *.swp
 *.o
+*.a
+*.so
+main*

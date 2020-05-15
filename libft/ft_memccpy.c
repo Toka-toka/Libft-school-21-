@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/06 21:30:29 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/15 19:38:46 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void		*ft_memccpy(void *dest, const void *src, int symbol, size_t n)
 	ch_symbol = symbol;
 	dest_point = (char*)dest;
 	src_point = (char*)src;
+	if (dest_point == NULL && src_point == NULL)
+		return (NULL);
 	while (i < size && src_point[i - 1] != ch_symbol)
 	{
 		dest_point[i] = src_point[i];

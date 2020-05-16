@@ -8,3 +8,4 @@
 *.a
 *.so
 main*
+_main*

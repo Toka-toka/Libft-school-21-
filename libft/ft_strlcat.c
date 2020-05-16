@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/10 00:11:25 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/17 01:09:32 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	len_src = ft_strlen(src);
 	len_dest = ft_strlen(dest);
 	count = len_dest;
-	if (n != 0)
-		n--;
-	else
-		return (len_src);
+	printf("Len = %ld\n", n);
+	n--;
 	while (count < n && *src != '\0')
 	{
 		dest[count] = *src;
@@ -32,5 +30,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		src++;
 	}
 	dest[count] = '\0';
-	return (len_src + len_dest);
+	printf("\nlen_src = %ld\nlen_dest = %ld\n, count = %ld", len_src, len_dest, count);
+	return (len_src + count);
 }

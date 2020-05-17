@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/12 19:09:10 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/17 16:05:54 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 	b = (char*)big;
 	l = (char*)little;
 	len_l = ft_strlen(l);
-	if (l == NULL || b == NULL || len_l > len || ft_strlen(b) < len)
+	if (ft_strlen(b) == 0)
 		return (NULL);
-	if (l[0] == '\0')
+	if (len_l == 0)
 		return (b);
 	while (i + len_l <= len)
 	{

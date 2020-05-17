@@ -6,7 +6,7 @@
 #    By: sedric <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 17:29:46 by sedric            #+#    #+#              #
-#    Updated: 2020/05/16 17:59:34 by sedric           ###   ########.fr        #
+#    Updated: 2020/05/17 17:29:02 by sedric           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,8 @@ SRC = 	ft_atoi.c\
 		ft_strrchr.c\
 		ft_tolower.c\
 		ft_toupper.c\
+		ft_calloc.c\
+		ft_strdup.c\
 
 OBJ = $(SRC:.c=.o)
 

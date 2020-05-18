@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 22:46:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/18 14:12:27 by sedric           ###   ########.fr       */
+/*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
+/*   Updated: 2020/05/18 15:21:55 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	int		arr[10];
-	int		i;
-	int		flag;
-	char	*number;
+	char	*s3;
+	size_t	len_s1;
+	size_t	len_s2;
 
-	flag = (n < 0 ? 1 : 0);
-	i = 0;
-	while (n != 0 || i == 0)
-	{
-		arr[i] = (flag == 0 ? n % 10 : n % 10 * -1);
-		n = n / 10;
-		i++;
-	}
-	if (!(number = malloc(sizeof(char) * (i + 1 + flag))))
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	flag == 1 ? number[0] = '-' | n++ : 0;
-	while (i > 0)
-	{
-		number[n] = arr[i - 1] + 48;
-		i--;
-		n++;
-	}
-	number[n] = '\0';
-	return (number);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	s3 = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (s3 == NULL)
+		return (NULL);
+	ft_memcpy(s3, s1, len_s1);
+	ft_memcpy(s3 + len_s1, s2, len_s2);
+	s3[len_s1 + len_s2] = '\0';
+	return (s3);
 }

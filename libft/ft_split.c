@@ -6,13 +6,15 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/20 20:53:03 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/21 01:35:26 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-int			ft_check (char const *s, char c)
+#include <stdio.h>
+
+/* int			ft_check (char const *s, char c)
 {
 	int		start;
 	
@@ -23,9 +25,26 @@ int			ft_check (char const *s, char c)
 	if (s[start] == '\0')
 		return (-1);
 	return(start); 
+}	*/
+
+int ft_countword (char const *s, char c)
+{
+			int count;
+
+			count = 0;
+			while (*s != '\0')
+			{
+				while(*s == c)
+					s++;
+				if(*s != c && *s != '\0')
+					count++;
+				while(*s != c && *s != '\0')
+					s++;
+			}
+			return (count);
 }
 
-char		**ft_createmassive(int words, int symbols)
+/*char		**ft_createmassive(int words, int symbols)
 {
 	char	**split;
 	
@@ -35,27 +54,30 @@ char		**ft_createmassive(int words, int symbols)
 		split[0] = (char *)malloc(sizeof(char) * 1);
 		split[0] = "\0";
 		split[1] = NULL;
-		return (split);
 	}
 	else
-		return(NULL);
-}
+		return(split);*/
+//}
 
-char		**ft_split(char const *s, char c)
+int		ft_split(char const *s, char c)
 {
-	char	**split;
-	int		start;
+//	char	**split;
+//	int		start;
+	int		count_word;
 //	size_t	len_begin;
 //	size_t	len_end;
 	
-	start = ft_check (s, c);
-	if (start == -2)
+//	start = ft_check (s, c);
+	count_word = ft_countword(s, c);
+	printf("word = %d", count_word);
+	
+/*	if (start == -2)
 		return (NULL);
 	if (start == -1)
 		split = ft_createmassive (0, 0);
-//	else
-//	{
-//		ft_createmassive(s, start, 
-//	}
-	return (split);
+	else
+	{
+		ft_createmassive(s, start, 
+	}*/
+	return (0);// (split);
 }

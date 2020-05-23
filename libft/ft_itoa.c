@@ -6,7 +6,7 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 22:46:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/18 16:50:45 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/23 22:58:07 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 char		*ft_itoa(int n)
 {
-	int		arr[10];
-	int		i;
-	int		flag;
-	char	*number;
+	int				i;
+	char			*str;
+	unsigned int	number;
 
-	flag = (n < 0 ? 1 : 0);
-	i = 0;
-	while (n != 0 || i == 0)
+	i = n > 0 ? 0 : 1;
+	number = n >= 0 ? n : -n;
+	while (n != 0)
 	{
-		arr[i] = (flag == 0 ? n % 10 : n % 10 * -1);
 		n = n / 10;
 		i++;
 	}
-	if (!(number = malloc(sizeof(char) * (i + 1 + flag))))
+	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	flag == 1 ? number[0] = '-' | n++ : 0;
-	while (i > 0)
+	str[0] = number != 0 ? '-' : '0';
+	str[i] = '\0';
+	while (number != 0)
 	{
-		number[n] = arr[i - 1] + 48;
-		i--;
-		n++;
+		str[--i] = number % 10 + 48;
+		number = number / 10;
 	}
-	number[n] = '\0';
-	return (number);
+	return (str);
 }

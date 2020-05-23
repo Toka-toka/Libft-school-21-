@@ -12,21 +12,16 @@
 
 #include "libft.h"
 
-int			ft_countword(char const *s, char c)
+char		**ft_cubalibre(int *app, char **split, int i)
 {
-	int		count;
-
-	count = 0;
-	while (*s != '\0')
+	free(app);
+	while (i >= 0)
 	{
-		while (*s == c)
-			s++;
-		if (*s != c && *s != '\0')
-			count++;
-		while (*s != c && *s != '\0')
-			s++;
+		free(split[i]);
+		i--;
 	}
-	return (count);
+	free(split);
+	return (NULL);
 }
 
 int			*ft_wordsearch(char const *s, int *arr, char c)
@@ -40,18 +35,6 @@ int			*ft_wordsearch(char const *s, int *arr, char c)
 	return (arr);
 }
 
-void		ft_cubalibre(int *app, char **split, int i)
-{
-	free(app);
-//	i--;
-	while (i >= 0)
-	{
-		free(split[i]);
-		i--;
-	}
-	free(split);
-}
-
 char		**ft_mallocmaster(int words, char const *s, char c)
 {
 	char	**split;
@@ -59,29 +42,23 @@ char		**ft_mallocmaster(int words, char const *s, char c)
 	int		*arr;
 
 	split = (char**)malloc((words + 1) * sizeof(char *));
-	if (split == NULL)
-		return (NULL);
 	arr = ft_calloc(sizeof(int), 2);
+	if (split == NULL || arr == NULL)
+	{
+		free(split);
+		return (NULL);
+	}
 	i = 0;
-	while (i < words || i == 0)
+	while (i < words)
 	{
 		ft_wordsearch(s, arr, c);
-//		if (i != 3)
 		split[i] = ft_substr(s, (unsigned int)arr[0], (size_t)arr[1]);
-//		else
-//			split[i] = NULL;
-//		printf("split[%d] = %c", i, split[0][0]);
 		if (split[i] == NULL)
-		{
-//			printf("Hello!");
-			ft_cubalibre(arr, split, i);
-			return (split);
-		}
+			return (ft_cubalibre(arr, split, i));
 		i++;
 	}
-//	free(arr);
-	split[words] = NULL;
-//	printf("split[%d] = %s", 0, split[0]);
+	free(arr);
+	split[i] = NULL;
 	return (split);
 }
 
@@ -89,16 +66,21 @@ char		**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		words;
+	int		i;
 
 	if (s == NULL)
 		return (NULL);
-	words = ft_countword(s, c);
-//	if (words != 0)
+	words = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i] != '\0')
+			words++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+	}
 	split = ft_mallocmaster(words, s, c);
-//	else
-//	{
-//		split = (char**)malloc((1) * sizeof(char *));
-//		split[0] = NULL;
-//	}
 	return (split);
 }

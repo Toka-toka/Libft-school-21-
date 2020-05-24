@@ -6,7 +6,7 @@
 #    By: sedric <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 17:29:46 by sedric            #+#    #+#              #
-#    Updated: 2020/05/24 15:44:06 by sedric           ###   ########.fr        #
+#    Updated: 2020/05/24 19:39:23 by sedric           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,10 @@ SRC = 	ft_atoi.c\
 		ft_split.c\
 		ft_itoa.c\
 		ft_strmapi.c\
+		ft_putchar_fd.c\
+#		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd\#
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,13 +6,15 @@
 #    By: sedric <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 17:29:46 by sedric            #+#    #+#              #
-#    Updated: 2020/05/25 19:01:12 by sedric           ###   ########.fr        #
+#    Updated: 2020/05/25 23:56:10 by sedric           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
+
+HEADER = libft.h
 
 SRC = 	ft_atoi.c\
 		ft_bzero.c\
@@ -51,9 +53,11 @@ SRC = 	ft_atoi.c\
 
 OBJ = $(SRC:.c=.o)
 
+.PHONY: all clean fclean re
+
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC) $(HEADER)
 	gcc $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)

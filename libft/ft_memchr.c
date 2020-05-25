@@ -6,11 +6,11 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/07 15:30:28 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/25 20:46:52 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void				*ft_memchr(const void *arr, int symbol, size_t n)
 {

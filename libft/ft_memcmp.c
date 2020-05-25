@@ -6,11 +6,11 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/15 19:58:16 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/25 20:47:20 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int					ft_memcmp(const void *s1, const void *s2, size_t n)
 {

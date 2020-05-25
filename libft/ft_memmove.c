@@ -6,11 +6,11 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/16 15:33:23 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/25 20:48:18 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void				*ft_memmove(void *dest, const void *src, size_t n)
 {

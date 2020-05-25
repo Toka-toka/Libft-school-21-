@@ -6,11 +6,11 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/16 17:22:53 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/25 20:46:24 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void		*ft_memccpy(void *dest, const void *src, int symbol, size_t n)
 {

@@ -6,13 +6,13 @@
 /*   By: sedric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 17:13:04 by sedric            #+#    #+#             */
-/*   Updated: 2020/05/23 13:50:48 by sedric           ###   ########.fr       */
+/*   Updated: 2020/05/25 20:42:13 by sedric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_cubalibre(int *app, char **split, int i)
+static char		**ft_cubalibre(int *app, char **split, int i)
 {
 	free(app);
 	while (i >= 0)
@@ -24,7 +24,7 @@ char		**ft_cubalibre(int *app, char **split, int i)
 	return (NULL);
 }
 
-int			*ft_wordsearch(char const *s, int *arr, char c)
+static int		*ft_wordsearch(char const *s, int *arr, char c)
 {
 	arr[0] = arr[0] + arr[1];
 	arr[1] = 0;
@@ -35,11 +35,11 @@ int			*ft_wordsearch(char const *s, int *arr, char c)
 	return (arr);
 }
 
-char		**ft_mallocmaster(int words, char const *s, char c)
+static char		**ft_mallocmaster(int words, char const *s, char c)
 {
-	char	**split;
-	int		i;
-	int		*arr;
+	char		**split;
+	int			i;
+	int			*arr;
 
 	split = (char**)malloc((words + 1) * sizeof(char *));
 	arr = ft_calloc(sizeof(int), 2);
@@ -62,11 +62,11 @@ char		**ft_mallocmaster(int words, char const *s, char c)
 	return (split);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		words;
-	int		i;
+	char		**split;
+	int			words;
+	int			i;
 
 	if (s == NULL)
 		return (NULL);
